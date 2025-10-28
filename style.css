@@ -1,0 +1,234 @@
+/* Variables pour les couleurs */
+:root {
+  --bg-color: #f9fafb;
+  --text-color: #111827;
+  --header-bg: #ffffff;
+  --section-bg: #ffffff;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --border-color: #e5e7eb;
+  --link-color: #2563eb;
+  --link-hover: #1d4ed8;
+  --button-bg: #f3f4f6;
+  --button-hover: #e5e7eb;
+  --footer-bg: #374151;
+  --footer-text: #ffffff;
+  --blockquote-bg: #f9fafb;
+  --blockquote-border: #3b82f6;
+}
+
+.dark {
+  --bg-color: #111827;
+  --text-color: #f9fafb;
+  --header-bg: #1f2937;
+  --section-bg: #1f2937;
+  --card-bg: #374151;
+  --card-shadow: rgba(0, 0, 0, 0.3);
+  --border-color: #4b5563;
+  --link-color: #60a5fa;
+  --link-hover: #93c5fd;
+  --button-bg: #374151;
+  --button-hover: #4b5563;
+  --footer-bg: #111827;
+  --footer-text: #f9fafb;
+  --blockquote-bg: #374151;
+  --blockquote-border: #3b82f6;
+}
+
+/* Styles de base */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark body {
+  background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+  background-blend-mode: multiply;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+header {
+  background-color: var(--header-bg);
+  box-shadow: 0 1px 3px var(--card-shadow);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem;
+}
+
+header img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+}
+
+header h1 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+header p {
+  margin: 0.5rem 0 0 0;
+}
+
+.toggle-button {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--button-bg);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-button:hover {
+  background-color: var(--button-hover);
+}
+
+/* Sections */
+section {
+  padding: 3rem 0;
+  background-color: var(--section-bg);
+}
+
+section:nth-child(even) {
+  background-color: var(--bg-color);
+}
+
+h2 {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* Grille de projets */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px var(--card-shadow);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: var(--text-color);
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.card a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.card a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* Compétences */
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+}
+
+/* Citation */
+blockquote {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: var(--blockquote-bg);
+  border-left: 4px solid var(--blockquote-border);
+  font-style: italic;
+}
+
+/* Footer */
+footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+footer a {
+  color: var(--footer-text);
+  margin: 0 0.5rem;
+}
+
+footer a:hover {
+  opacity: 0.8;
+}
+
+/* Éléments décoratifs */
+.decorative-parrot {
+  position: fixed;
+  width: 100px;
+  height: auto;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.parrot-1 {
+  top: 10%;
+  left: 5%;
+}
+
+.parrot-2 {
+  top: 60%;
+  right: 5%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header img {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .decorative-parrot {
+    display: none;
+  }
+}

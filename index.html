@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paarroo - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script>
         // Translations
@@ -101,6 +101,7 @@
             document.documentElement.classList.toggle('dark');
             const isDark = document.documentElement.classList.contains('dark');
             localStorage.setItem('darkMode', isDark);
+            console.log('Dark mode toggled:', isDark);
         }
 
         // Load preferences
@@ -113,90 +114,95 @@
         });
     </script>
 </head>
-<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <body>
+        <!-- Éléments décoratifs perroquets -->
+        <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Perroquet décoratif" class="decorative-parrot parrot-1">
+        <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Perroquet décoratif" class="decorative-parrot parrot-2">
     <!-- Header -->
-    <header class="bg-white dark:bg-gray-800 shadow-md">
-        <div class="container mx-auto px-4 py-6 flex items-center justify-between">
-            <div class="flex items-center">
-                <img src="https://avatars.githubusercontent.com/u/210502486?v=4" alt="Photo de profil" class="w-24 h-24 rounded-full mr-6">
-                <div>
-                    <h1 class="text-3xl font-bold">Paarroo</h1>
-                    <p class="text-lg text-gray-600 dark:text-gray-300">Web Developer | Decentralization Visionary</p>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Crafting Digital Dreams into Reality • Privacy First • Creative Freedom</p>
+    <header>
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="https://avatars.githubusercontent.com/u/210502486?v=4" alt="Photo de profil">
+                    <div>
+                        <h1>Paarroo</h1>
+                        <p>Web Developer | Decentralization Visionary</p>
+                        <p>Crafting Digital Dreams into Reality • Privacy First • Creative Freedom</p>
+                    </div>
                 </div>
+                <button onclick="toggleDarkMode()" class="toggle-button">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
             </div>
-            <button onclick="toggleDarkMode()" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
-                <i class="fas fa-moon dark:hidden"></i>
-                <i class="fas fa-sun hidden dark:inline"></i>
-            </button>
         </div>
     </header>
 
     <!-- À propos -->
-    <section class="py-12 bg-white dark:bg-gray-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold mb-6">À propos</h2>
-            <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+    <section>
+        <div class="container">
+            <h2>À propos</h2>
+            <p>
                 Digital Dreamer passionné par la création de l'internet décentralisé de demain. Je développe des technologies qui autonomisent l'humanité tout en protégeant ce qui compte le plus : la confidentialité et la liberté.
             </p>
-            <div class="mt-6">
-                <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm mr-2">Privacy First</span>
-                <span class="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm mr-2">Creative Freedom</span>
-                <span class="inline-block bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm mr-2">Open Protocols</span>
-                <span class="inline-block bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm">Community Governance</span>
+            <div>
+                <span class="badge">Privacy First</span>
+                <span class="badge">Creative Freedom</span>
+                <span class="badge">Open Protocols</span>
+                <span class="badge">Community Governance</span>
             </div>
-            <div class="mt-8">
+            <div>
                 <img src="https://img.shields.io/badge/Status-Building_the_Future-FF6B35?style=for-the-badge&logo=rocket&logoColor=white" alt="Status Badge">
                 <img src="https://img.shields.io/badge/Focus-Web3_Revolution-7C3AED?style=for-the-badge&logo=ethereum&logoColor=white" alt="Focus Badge">
                 <img src="https://img.shields.io/badge/Mission-Digital_Freedom-F97316?style=for-the-badge&logo=phoenix-framework&logoColor=white" alt="Mission Badge">
             </div>
-            <blockquote class="mt-8 p-4 bg-gray-50 dark:bg-gray-700 border-l-4 border-blue-500 italic text-gray-700 dark:text-gray-300">
+            <blockquote>
                 "Always building tomorrow's decentralized internet, one digital dream at a time"
             </blockquote>
         </div>
     </section>
 
     <!-- Projets -->
-    <section class="py-12 bg-gray-50 dark:bg-gray-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold mb-6">Projets</h2>
-            <div class="grid md:grid-cols-2 gap-6">
+    <section>
+        <div class="container">
+            <h2>Projets</h2>
+            <div class="grid">
                 <!-- Projet 1 -->
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-2">Final Project THP Fullstack Ruby on Rails - CineRoom</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">Application fullstack développée avec Ruby on Rails pour la gestion de salles de cinéma.</p>
-                    <a href="https://github.com/Paarroo/Final_Project_THP_Fullstack_Ruby0nRails_CineRoom" class="text-blue-600 dark:text-blue-400 hover:underline">Voir sur GitHub</a>
+                <div class="card">
+                    <h3>Final Project THP Fullstack Ruby on Rails - CineRoom</h3>
+                    <p>Application fullstack développée avec Ruby on Rails pour la gestion de salles de cinéma.</p>
+                    <a href="https://github.com/Paarroo/Final_Project_THP_Fullstack_Ruby0nRails_CineRoom">Voir sur GitHub</a>
                 </div>
                 <!-- Projet 2 -->
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-2">Kitten Lovers</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">Projet web dédié aux amateurs de chats.</p>
-                    <a href="https://github.com/Paarroo/Kitten_Lovers" class="text-blue-600 dark:text-blue-400 hover:underline">Voir sur GitHub</a>
+                <div class="card">
+                    <h3>Kitten Lovers</h3>
+                    <p>Projet web dédié aux amateurs de chats.</p>
+                    <a href="https://github.com/Paarroo/Kitten_Lovers">Voir sur GitHub</a>
                 </div>
                 <!-- Projet 3 -->
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-2">Eventbrite Clone</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">Clone d'Eventbrite pour la gestion d'événements.</p>
-                    <a href="https://github.com/Paarroo/Eventbrite_Clone" class="text-blue-600 dark:text-blue-400 hover:underline">Voir sur GitHub</a>
+                <div class="card">
+                    <h3>Eventbrite Clone</h3>
+                    <p>Clone d'Eventbrite pour la gestion d'événements.</p>
+                    <a href="https://github.com/Paarroo/Eventbrite_Clone">Voir sur GitHub</a>
                 </div>
                 <!-- OpenSpec -->
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-2">OpenSpec</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">Outil de développement piloté par spécifications pour assistants de codage IA. Aligne humains et IA avant l'implémentation.</p>
-                    <a href="https://github.com/Fission-AI/OpenSpec" class="text-blue-600 dark:text-blue-400 hover:underline">Voir sur GitHub</a>
+                <div class="card">
+                    <h3>OpenSpec</h3>
+                    <p>Outil de développement piloté par spécifications pour assistants de codage IA. Aligne humains et IA avant l'implémentation.</p>
+                    <a href="https://github.com/Fission-AI/OpenSpec">Voir sur GitHub</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Compétences -->
-    <section class="py-12 bg-white dark:bg-gray-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold mb-6">Compétences</h2>
-            <div class="grid md:grid-cols-3 gap-6">
+    <section>
+        <div class="container">
+            <h2>Compétences</h2>
+            <div class="grid">
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Langages & Frameworks</h3>
-                    <div class="flex flex-wrap gap-2">
+                    <h3>Langages & Frameworks</h3>
+                    <div class="flex-wrap">
                         <img src="https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=flat&logo=ruby-on-rails&logoColor=white" alt="Rails">
                         <img src="https://img.shields.io/badge/Ruby-CC342D?style=flat&logo=ruby&logoColor=white" alt="Ruby">
                         <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" alt="JS">
@@ -208,23 +214,23 @@
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Bases de données</h3>
-                    <div class="flex flex-wrap gap-2">
+                    <h3>Bases de données</h3>
+                    <div class="flex-wrap">
                         <img src="https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white" alt="PostgreSQL">
                         <img src="https://img.shields.io/badge/SQLite-07405E?style=flat&logo=sqlite&logoColor=white" alt="SQLite">
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Outils & Autres</h3>
-                    <div class="flex flex-wrap gap-2">
+                    <h3>Outils & Autres</h3>
+                    <div class="flex-wrap">
                         <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub">
                         <img src="https://img.shields.io/badge/Claude_AI-FF6B35?style=flat&logo=anthropic&logoColor=white" alt="Claude AI">
                     </div>
                 </div>
             </div>
-            <div class="mt-8">
-                <h3 class="text-lg font-semibold mb-4">━━━━━━━━━━━ 📚 Currently Learning 📚 ━━━━━━━━━━━</h3>
-                <div class="flex flex-wrap gap-2">
+            <div>
+                <h3>━━━━━━━━━━━ 📚 Currently Learning 📚 ━━━━━━━━━━━</h3>
+                <div class="flex-wrap">
                     <img src="https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white" alt="Rust">
                     <img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB" alt="React">
                     <img src="https://img.shields.io/badge/Blockchain-121D33?style=flat&logo=blockchain.com&logoColor=white" alt="Blockchain">
